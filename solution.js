@@ -6,7 +6,7 @@ class Recipe {
 	constructor() {
 		this.title;
 		this.servings;
-		this.ingredients;
+		this.ingredients = [];
 	}
 
 	logInformation() {
@@ -28,3 +28,26 @@ recipe.ingredients = ['cinnamon', 'cumin', 'cocoa'];
 recipe.logInformation();
 
 // Task 2
+class Book {
+	constructor(bookTitle, bookAuthor, alreadyRead) {
+		this.bookTitle = bookTitle;
+		this.bookAuthor = bookAuthor;
+		this.alreadyRead = alreadyRead;
+	}
+}
+
+const hobbit = new Book('The Hobbit', 'J.R.R. Tolkien', true);
+const rings = new Book('The Lord of the Rings', 'J.R.R. Tolkien', false);
+
+const books = [];
+books.push(hobbit, rings);
+
+books.forEach(book => {
+	console.log(book.bookTitle);
+	console.log(book.bookAuthor);
+	book.alreadyRead
+		? console.log(`You already read "${book.bookTitle}" by ${book.bookAuthor}`)
+		: console.log(
+				`You still need to read "${book.bookTitle}" by ${book.bookAuthor}`
+		  );
+});
